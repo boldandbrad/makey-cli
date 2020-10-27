@@ -1,2 +1,3 @@
-# makey
+# makey-cli
+
 CLI passkey maker.
