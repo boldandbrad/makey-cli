@@ -2,7 +2,9 @@
 
 > CLI passkey maker.
 
-**makey-cli** is a simple and lightweight tool for making secure passkeys in your terminal. ***makey*** does not store information, produce logs, or make any network connections. It even avoids printing passkeys in plain text on screen by default, instead copying them directly to your clipboard for use.
+A simple and lightweight tool for making secure passkeys in your terminal.
+
+**makey-cli** does not store information, produce logs, or make network connections. It even avoids printing passkeys in plain-text on screen by default, instead copying them directly to your clipboard for use.
 
 ## Features
 
