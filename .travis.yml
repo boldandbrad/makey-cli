@@ -6,8 +6,7 @@ python:
   - "3.9"
   - "nightly"
 
-before_install:
-  - sudo apt-get -y install xsel
+os: osx
 
 install:
   - pip install --upgrade pip
