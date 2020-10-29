@@ -40,3 +40,13 @@ deploy:
     on:
       tags: true
       python: "3.9"
+
+  # deploy release tag docs to github pages
+  - provider: pages
+    local_dir: docs
+    skip_cleanup: true
+    github_token: $GITHUB_TOKEN
+    keep_history: true
+    on:
+      tags: true
+      python: "3.9"
