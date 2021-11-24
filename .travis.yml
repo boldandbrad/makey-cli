@@ -1,20 +1,19 @@
 language: python
 python:
-  - "3.6"
-  - "3.7"
   - "3.8"
   - "3.9"
+  # - "3.10"
   - "nightly"
 
 install:
   - pip install --upgrade pip
   - pip install pip-tools
-  - pip-compile
+  - pip-compile --extra dev
   - pip install -r requirements.txt
   - pip install .
 
 script:
-  - pytest --cov-report=xml --cov=./makeycli/
+  - pytest --cov-report=xml --cov=./makey/
 
 after_success:
   - codecov
@@ -26,6 +25,7 @@ deploy:
     username: __token__
     password: $PYPI_TEST_TOKEN
     skip_cleanup: true
+    skip_existing: true
     distributions: sdist bdist_wheel
     on:
       branch: develop
@@ -36,6 +36,7 @@ deploy:
     username: __token__
     password: $PYPI_TOKEN
     skip_cleanup: true
+    skip_existing: true
     distributions: sdist bdist_wheel
     on:
       tags: true

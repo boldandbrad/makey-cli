@@ -1,7 +1,7 @@
 
 <!-- [<img src="" alt="logo" width="200"/>](/) -->
 
-# [**makey-cli** **<small>1.0.0</small>**](/)
+# [**makey-cli** **<small>1.1.0</small>**](/)
 
 > CLI passkey maker.
 
@@ -9,7 +9,7 @@
 - No network connections, logging, or cache
 - Free and open source
 
-[Github](https://github.com/bradleycwojcik/makey-cli "Github")
+[Github](https://github.com/boldandbrad/makey-cli "Github")
 [Learn More](#makey-cli "Learn More")
 
 <!-- ![color](#) -->

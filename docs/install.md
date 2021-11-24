@@ -1,8 +1,10 @@
 # Install
 
-> **makey-cli** is compatible with `python 3.6+` and has been tested on macOS and Windows.
+> **makey-cli** is compatible with `python 3.6+` and has been tested on macOS
+> and Windows.
 
-Install to a globally executable isolated environment with [`pipx`](https://pipxproject.github.io/pipx/) (Recommended).
+Install to a globally executable isolated environment with
+[`pipx`](https://pipxproject.github.io/pipx/) (Recommended).
 
 ```zsh
 pipx install makey-cli
