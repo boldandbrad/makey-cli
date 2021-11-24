@@ -7,6 +7,21 @@ The format is based on
 and this project adheres to
 [Semantic Versioning](https://semver.org/spec/v2.0.0.html "Semantic Versioning").
 
+## [1.1.0] - 2021-11-24
+
+### Updated
+
+- Dependency Click from v7.x to v8.x
+- Code formatting and structure
+
+### Fixed
+
+- `makey --version` Correctly works again with latest dependencies.
+
+### Removed
+
+- Support for python versions 3.6 and 3.7
+
 ## [1.0.0] - 2020-10-29
 
 ### Added

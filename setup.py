@@ -17,10 +17,10 @@ setup_info = dict(
     description="CLI passkey maker.",
     long_description=open("README.md").read(),
     long_description_content_type="text/markdown",
-    url="https://bradleycwojcik.github.io/makey-cli/",
+    url="https://boldandbrad.github.io/makey-cli/",
     project_urls={
-        "Source": "https://github.com/bradleycwojcik/makey-cli/",
-        "Bug Tracker": "https://github.com/bradleycwojcik/makey-cli/issues",
+        "Source": "https://github.com/boldandbrad/makey-cli/",
+        "Bug Tracker": "https://github.com/boldandbrad/makey-cli/issues",
     },
     packages=find_packages(),
     include_package_data=True,

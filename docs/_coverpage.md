@@ -9,7 +9,7 @@
 - No network connections, logging, or cache
 - Free and open source
 
-[Github](https://github.com/bradleycwojcik/makey-cli "Github")
+[Github](https://github.com/boldandbrad/makey-cli "Github")
 [Learn More](#makey-cli "Learn More")
 
 <!-- ![color](#) -->
