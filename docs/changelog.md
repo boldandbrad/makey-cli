@@ -7,11 +7,23 @@ The format is based on
 and this project adheres to
 [Semantic Versioning](https://semver.org/spec/v2.0.0.html "Semantic Versioning").
 
+## [1.2.0] - 2022-05-03
+
+### Added
+
+- New `-e`/`--exclude` option to make passkeys without certain characters.
+- Ability to install makey-cli with Homebrew! See [Install Guide](install.md
+  "Install Guide").
+
+## Changed
+
+- Quote characters (`"` and `'`) are now ALWAYS excluded from passkeys
+
 ## [1.1.0] - 2021-11-24
 
-### Updated
+### Changed
 
-- Dependency Click from v7.x to v8.x
+- Updated dependency Click from v7.x to v8.x
 - Code formatting and structure
 
 ### Fixed

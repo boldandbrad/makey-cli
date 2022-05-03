@@ -1,56 +1,76 @@
-# Install
+# Install Guide
 
-> **makey-cli** is compatible with `python 3.6+` and has been tested on macOS
+> **makey-cli** is compatible with `python 3.8+` and has been tested on macOS
 > and Windows.
 
-Install to a globally executable isolated environment with
-[`pipx`](https://pipxproject.github.io/pipx/) (Recommended).
+## Install
 
-```zsh
-pipx install makey-cli
-```
+Install the latest version of **makey-cli**.
 
-Or install to your active python environment with `pip`.
+- [Homebrew](https://brew.sh) - global isolated
 
-```zsh
-pip install makey-cli
-```
+    ```zsh
+    brew tap boldandbrad/homebrew-tap
+    brew install makey-cli
+    ```
 
-Now, make a passkey! Check the [Usage Guide](usage.md "Usage Guide") or use
-`makey --help` to get going.
+- [pipx](https://pipxproject.github.io/pipx/) - global isolated
 
-```zsh
-makey
-```
+    ```zsh
+    pipx install makey-cli
+    ```
 
-Your new passkey will be copied to your clipboard. Just paste to use!
+- pip - active python environment
+
+    ```zsh
+    pip install makey-cli
+    ```
+
+Now you're ready to make a passkey! Check the [Usage Guide](usage.md "Usage Guide")
+or use `makey --help` to get going.
 
 ## Upgrade
 
 Upgrade to the latest version of **makey-cli**.
 
-```zsh
-pipx upgrade makey-cli
-```
+- Homebrew
 
-Or
+    ```zsh
+    brew update && upgrade makey-cli
+    ```
 
-```zsh
-pip install --upgrade makey-cli
-```
+- pipx
+
+    ```zsh
+    pipx upgrade makey-cli
+    ```
+
+- pip
+
+    ```zsh
+    pip install --upgrade makey-cli
+    ```
 
 ## Uninstall
 
 Remove **makey-cli** from your environment.
 
-```zsh
-pipx uninstall makey-cli
-```
+- Homebrew
 
-Or
+    ```zsh
+    brew uninstall makey-cli
+    ```
 
-```zsh
-pip uninstall makey-cli
-```
+- pipx
+
+    ```zsh
+    pipx uninstall makey-cli
+    ```
+
+- pip
+
+    ```zsh
+    pip uninstall makey-cli
+    ```
 
 <div style="text-align: right"><i>Last updated: {docsify-updated}</i></div>

@@ -4,8 +4,17 @@ import pyperclip
 import string
 from secrets import choice
 
+ALWAYS_EXCLUDE = "\"'"
+
 
 @click.command(help="CLI passkey maker.")
+@click.option(
+    "-e",
+    "--exclude",
+    default="",
+    is_flag=False,
+    help="Characters to exclude.",
+)
 @click.option(
     "-l",
     "--length",
@@ -28,14 +37,19 @@ from secrets import choice
     package_name="makey-cli",
     message="%(prog)s-cli, v%(version)s",
 )
-def cli(length: int, show: bool):
+def cli(exclude: str, length: int, show: bool):
     """Main 'makey' command. Makes a passkey and copies it to the clipboard."""
 
-    # make passkey
+    # determine usable characters
     characters = string.ascii_letters + string.punctuation + string.digits
+    exclude += ALWAYS_EXCLUDE
+    for char in exclude:
+        characters = characters.replace(char, "")
+
+    # make passkey
     passkey = "".join(choice(characters) for _ in range(length))
 
-    # copy to clipboard
+    # copy passkey to clipboard
     pyperclip.copy(passkey)
 
     if show:
