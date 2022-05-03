@@ -7,6 +7,7 @@ from makey.makey import cli
 
 
 DEFAULT_LENGTH = 16
+COPIED_STDOUT = "\tNew passkey copied to clipboard!\n"
 
 
 def test_makey():
@@ -14,8 +15,26 @@ def test_makey():
         runner = CliRunner()
         result = runner.invoke(cli, [])
         assert result.exit_code == 0
-        assert result.stdout == "\tNew passkey copied to clipboard.\n"
-        assert len(pyperclip.paste()) == DEFAULT_LENGTH
+
+        passkey = pyperclip.paste()
+
+        assert result.stdout == COPIED_STDOUT
+        assert len(passkey) == DEFAULT_LENGTH
+        assert '"' not in passkey
+        assert "'" not in passkey
+
+
+def test_makey_with_exclude():
+    if "TRAVIS" not in os.environ:
+        runner = CliRunner()
+        result = runner.invoke(cli, ["-e", "&"])
+        assert result.exit_code == 0
+
+        passkey = pyperclip.paste()
+
+        assert result.stdout == COPIED_STDOUT
+        assert len(passkey) == DEFAULT_LENGTH
+        assert "&" not in passkey
 
 
 def test_makey_with_length():
@@ -23,8 +42,11 @@ def test_makey_with_length():
         runner = CliRunner()
         result = runner.invoke(cli, ["-l", "20"])
         assert result.exit_code == 0
-        assert result.stdout == "\tNew passkey copied to clipboard.\n"
-        assert len(pyperclip.paste()) == 20
+
+        passkey = pyperclip.paste()
+
+        assert result.stdout == COPIED_STDOUT
+        assert len(passkey) == 20
 
 
 def test_makey_with_show():
@@ -32,8 +54,12 @@ def test_makey_with_show():
         runner = CliRunner()
         result = runner.invoke(cli, ["-s"])
         assert result.exit_code == 0
-        assert len(result.stdout.replace("\n", "")) == DEFAULT_LENGTH
-        assert len(pyperclip.paste()) == DEFAULT_LENGTH
+
+        passkey = pyperclip.paste()
+        printedkey = result.stdout.replace("\n", "")
+
+        assert len(passkey) == DEFAULT_LENGTH
+        assert passkey == printedkey
 
 
 def test_version():

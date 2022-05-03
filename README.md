@@ -16,27 +16,34 @@ default, instead copying them directly to your clipboard for use.
 
 ## Install
 
-Install to your active python instance (Python 3.6+ required).
-
 ```zsh
-pip install makey-cli
+brew tap boldandbrad/homebrew-tap
+brew install makey-cli
 ```
 
-Or install globally with `pipx`.
+or
 
 ```zsh
 pipx install makey-cli
 ```
 
-> For more details, read the **makey-cli** [install guide](https://boldandbrad.github.io/makey-cli/).
+or
+
+```zsh
+pip install makey-cli
+```
+
+> For more details, read the **makey-cli** [install guide](https://boldandbrad.github.io/makey-cli/#/install).
 
 ## Usage
 
 ```zsh
 makey
-# or
-makey --length 20
 ```
+
+New passkey is copied to your clipboard!
+
+> For more usage details, read the **makey-cli** [usage guide](https://boldandbrad.github.io/makey-cli/#/usage).
 
 ## License
 
