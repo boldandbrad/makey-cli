@@ -1,7 +1,7 @@
 
 <!-- [<img src="" alt="logo" width="200"/>](/) -->
 
-# [**makey-cli** **<small>1.2.0.dev1</small>**](/)
+# [**makey-cli** **<small>1.2.0.dev2</small>**](/)
 
 > CLI passkey maker.
 
