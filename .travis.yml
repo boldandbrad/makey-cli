@@ -1,4 +1,6 @@
 language: python
+os: linux
+dist: xenial
 python:
   - "3.8"
   - "3.9"
@@ -46,7 +48,7 @@ deploy:
   - provider: pages
     local_dir: docs
     skip_cleanup: true
-    github_token: $GITHUB_TOKEN
+    token: $GITHUB_TOKEN
     keep_history: true
     on:
       tags: true

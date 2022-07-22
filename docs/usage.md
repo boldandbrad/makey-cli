@@ -36,6 +36,13 @@ makey
     makey -s
     ```
 
+- `-n`, `--no-copy` - Do not copy passkey to clipboard. Forces `--show`.
+  Recommended when piping output in scripts. Default: false. (`v1.3.0+`)
+
+    ```zsh
+    makey -n
+    ```
+
 - `-v`, `--version` - Print the installed makey-cli version.
 
 <div style="text-align: right"><i>Last updated: {docsify-updated}</i></div>

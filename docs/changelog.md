@@ -7,6 +7,16 @@ The format is based on
 and this project adheres to
 [Semantic Versioning](https://semver.org/spec/v2.0.0.html "Semantic Versioning").
 
+## Unreleased
+
+### Added
+
+- New `-n`/`--no-copy` option to send passkeys to stdout instead of the clipboard.
+
+### Deprecated
+
+- The `-s`/`--show` is slated to be removed in a future major release.
+
 ## [1.2.0] - 2022-05-03
 
 ### Added
