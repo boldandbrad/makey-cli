@@ -1,0 +1,53 @@
+[build-system]
+requires = ["flit_core >=3.2,<4"]
+build-backend = "flit_core.buildapi"
+
+[project]
+name = "makey-cli"
+authors = [{ name = "Bradley Wojcik", email = "bradleycwojcik@gmail.com" }]
+readme = "README.md"
+license = { file = "LICENSE" }
+classifiers = ["License :: OSI Approved :: MIT License"]
+requires-python = ">=3.10"
+dynamic = ["version", "description"]
+dependencies = [
+  "click>=8",
+  "pyperclip>=1.8",
+]
+
+[project.scripts]
+makey = "makey.makey:cli"
+
+[project.urls]
+Home = "https://boldandbrad.github.io/makey-cli"
+Source = "https://github.com/boldandbrad/makey-cli"
+Issues = "https://github.com/boldandbrad/makey-cli/issues"
+
+[project.optional-dependencies]
+test = [
+  "pytest >=6",
+  "pytest-cov",
+  "pytest-mock",
+]
+dev = [
+  "black",
+  "flake8",
+  "flit",
+  "isort",
+  "pre-commit",
+  "homebrew-pypi-poet",
+]
+
+[tool.flit.module]
+name = "makey"
+
+[tool.isort]
+profile = "black"
+
+[tool.pytest.ini_options]
+minversion = "6.0"
+testpaths = ["tests"]
+
+[tool.ruff]
+# Never enforce `E501` (line length violations).
+ignore = ["E501"]

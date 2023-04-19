@@ -3,7 +3,6 @@
 *.iml
 .project
 .vscode*
-.markdownlint.yaml
 
 # os
 .DS_Store
@@ -12,6 +11,7 @@
 .python-version
 .node-version
 .venv
+.envrc
 
 # python artifacts
 __pycache__/
@@ -20,6 +20,10 @@ __pycache__/
 build/
 dist/
 
+# tools
+.mypy_cache
+.ruff_cache
+
 # test
 .coverage
 coverage.xml
@@ -27,3 +31,8 @@ coverage.xml
 
 # homebrew
 formula.rb
+
+# docs
+package.json
+pnpm-lock.yaml
+node_modules
