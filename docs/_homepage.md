@@ -12,7 +12,7 @@ default, instead copying them directly to your clipboard for use.
 
 - Simple and lightweight
 - Relies on the python 3.6+ [`secrets`](https://docs.python.org/3/library/secrets.html)
-    module to generate cryptographically strong random passkeys
+  module to generate cryptographically strong random passkeys
 - Does not produce caches, logs, data stores, or communicate over networks
 - Does not display passkeys in plaintext by default
 - Makes 16 character long passkeys by default

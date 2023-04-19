@@ -1,8 +1,8 @@
-import click
-import pyperclip
-
 import string
 from secrets import choice
+
+import click
+import pyperclip
 
 ALWAYS_EXCLUDE = "\"'"
 

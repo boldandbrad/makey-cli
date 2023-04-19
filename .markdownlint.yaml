@@ -1,0 +1,12 @@
+default: true
+blank_lines: false
+bullet: false
+first-line-h1: false
+html: false
+indentation: false
+line_length: false
+link-fragments: false
+no-duplicate-heading: false
+spaces: false
+url: false
+whitespace: false
