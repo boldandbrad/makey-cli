@@ -43,7 +43,8 @@ repos:
     hooks:
       - id: semgrep
         args: ["--config", "auto", "--error", "--skip-unknown-extensions"]
-  - repo: https://github.com/dosisod/refurb
-    rev: v1.15.0
-    hooks:
-      - id: refurb
+  # do not use refurb yet as it requires python 3.10
+  # - repo: https://github.com/dosisod/refurb
+  #   rev: v1.15.0
+  #   hooks:
+  #     - id: refurb
