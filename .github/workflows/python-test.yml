@@ -33,7 +33,7 @@ jobs:
           flit install
       - name: Run tests via pytest
         run: |
-          pytest -v --cov-report xml --cov meeple
+          pytest -v --cov-report xml --cov makey
       - name: Upload test coverage to Codecov
         uses: codecov/codecov-action@v3
         with:
