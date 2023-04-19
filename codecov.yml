@@ -1,0 +1,11 @@
+# Codecov configuration file
+# See https://docs.codecov.com/docs/codecovyml-reference for more information
+coverage:
+  status:
+    project:
+      default:
+        target: 25%
+    patch:
+      default:
+        target: 25%
+        informational: true

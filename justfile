@@ -3,21 +3,22 @@
 venv:
     . .venv/bin/activate
 
-# install makey-cli
+# install meeple-cli from local
 install:
-    pip install .
+    pip install -q ."[test]"
+
+# install meeple-cli via flit
+flit-install:
+    pip install flit
+    flit install
 
 # install editable
-dev:
-    pip install -e .
+dev-install:
+    pip install -q -e .
 
-# build dist
-build:
-    python setup.py sdist bdist_wheel
-
-# generate homebrew formula
-brew: install
-    poet -f makey-cli >> formula.rb
+# lint and format
+lint:
+    pre-commit run --show-diff-on-failure --all-files
 
 # run all tests
 test: install
@@ -25,9 +26,22 @@ test: install
 
 # run all tests with coverage
 test-cov: install
-    pytest --cov-report=xml --cov=./makey/
+    pytest -v --cov-report xml --cov makey
+
+# build dist
+build:
+    flit build
+
+# serve docs on localhost
+serve-docs:
+    docsify serve docs
+
+# generate homebrew formula
+brew: install
+    poet -f makey-cli >> formula.rb
 
 # remove artifacts
+# TODO: remove __pycache__ dirs from src/ and tests/
 cleanup:
     rm -f .coverage
     rm -f coverage.xml
@@ -36,5 +50,6 @@ cleanup:
     rm -rf build
     rm -rf dist
     rm -rf *.egg-info
-    rm -rf makey/__pycache__
+    rm -rf src/makey/__pycache__
     rm -rf tests/__pycache__
+    rm -rf .ruff_cache

@@ -1,10 +1,9 @@
 import os
 
-from click.testing import CliRunner
 import pyperclip
+from click.testing import CliRunner
 
 from makey.makey import cli
-
 
 DEFAULT_LENGTH = 16
 COPIED_STDOUT = "\tNew passkey copied to clipboard!\n"

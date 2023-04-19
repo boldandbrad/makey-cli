@@ -1,10 +1,11 @@
 # makey-cli
 
-[![Build Status](https://api.travis-ci.com/boldandbrad/makey-cli.svg?branch=main)](https://travis-ci.com/github/boldandbrad/makey-cli)
+[![build status](https://img.shields.io/github/actions/workflow/status/boldandbrad/makey-cli/python-test.yml?branch=main&logo=github)](https://github.com/boldandbrad/makey-cli/actions/workflows/python-test.yml?query=branch%3Amain)
+[![pre-commit](https://img.shields.io/badge/pre--commit-enabled-brightgreen?logo=pre-commit)](https://github.com/pre-commit/pre-commit)
 [![codecov](https://codecov.io/gh/boldandbrad/makey-cli/branch/main/graph/badge.svg)](https://codecov.io/gh/boldandbrad/makey-cli)
-[![Docs](https://img.shields.io/website?down_message=down&label=docs&up_message=online&url=https%3A%2F%2Fboldandbrad.github.io%2Fmakey-cli%2F)](https://boldandbrad.github.io/makey-cli/)
-[![PyPI](https://img.shields.io/pypi/v/makey-cli)](https://pypi.org/project/makey-cli/)
-![PyPI - Downloads](https://img.shields.io/pypi/dm/makey-cli)
+[![docs](https://img.shields.io/website?down_message=down&label=docs&up_message=online&url=https%3A%2F%2Fboldandbrad.github.io%2Fmakey-cli%2F)](https://boldandbrad.github.io/makey-cli/)
+[![pypi](https://img.shields.io/pypi/v/makey-cli)](https://pypi.org/project/makey-cli/)
+[![downloads](https://img.shields.io/pypi/dm/makey-cli)](https://pypistats.org/packages/makey-cli)
 
 > CLI passkey maker.
 
