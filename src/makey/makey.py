@@ -5,6 +5,7 @@ import click
 import pyperclip
 
 ALWAYS_EXCLUDE = "\"'"
+DEFAULT_LENGTH = 16
 
 
 @click.command(help="CLI passkey maker.")
@@ -18,7 +19,7 @@ ALWAYS_EXCLUDE = "\"'"
 @click.option(
     "-l",
     "--length",
-    default=16,
+    default=DEFAULT_LENGTH,
     is_flag=False,
     help="Desired passkey length (default 16).",
 )

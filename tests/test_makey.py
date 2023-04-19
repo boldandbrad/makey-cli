@@ -1,64 +1,69 @@
-import os
-
 import pyperclip
 from click.testing import CliRunner
 
-from makey.makey import cli
+from makey.makey import DEFAULT_LENGTH, cli
 
-DEFAULT_LENGTH = 16
 COPIED_STDOUT = "\tNew passkey copied to clipboard!\n"
 
 
-def test_makey():
-    if "TRAVIS" not in os.environ:
-        runner = CliRunner()
-        result = runner.invoke(cli, [])
-        assert result.exit_code == 0
+def test_makey(mocker):
+    mocker.patch("pyperclip.copy")
 
-        passkey = pyperclip.paste()
+    runner = CliRunner()
+    result = runner.invoke(cli, [])
 
-        assert result.stdout == COPIED_STDOUT
-        assert len(passkey) == DEFAULT_LENGTH
-        assert '"' not in passkey
-        assert "'" not in passkey
+    assert result.exit_code == 0
+    pyperclip.copy.assert_called_once()
+    assert result.stdout == COPIED_STDOUT
 
 
-def test_makey_with_exclude():
-    if "TRAVIS" not in os.environ:
-        runner = CliRunner()
-        result = runner.invoke(cli, ["-e", "&"])
-        assert result.exit_code == 0
+def test_makey_default_length(mocker):
+    mocker.patch("pyperclip.copy")
 
-        passkey = pyperclip.paste()
+    runner = CliRunner()
+    result = runner.invoke(cli, ["--show"])
 
-        assert result.stdout == COPIED_STDOUT
-        assert len(passkey) == DEFAULT_LENGTH
-        assert "&" not in passkey
+    assert result.exit_code == 0
+    pyperclip.copy.assert_called_once()
 
+    passkey = result.stdout.rstrip()
 
-def test_makey_with_length():
-    if "TRAVIS" not in os.environ:
-        runner = CliRunner()
-        result = runner.invoke(cli, ["-l", "20"])
-        assert result.exit_code == 0
-
-        passkey = pyperclip.paste()
-
-        assert result.stdout == COPIED_STDOUT
-        assert len(passkey) == 20
+    assert len(passkey) == DEFAULT_LENGTH
+    assert "'" not in passkey
+    assert '"' not in passkey
 
 
-def test_makey_with_show():
-    if "TRAVIS" not in os.environ:
-        runner = CliRunner()
-        result = runner.invoke(cli, ["-s"])
-        assert result.exit_code == 0
+def test_makey_exclude(mocker):
+    mocker.patch("pyperclip.copy")
 
-        passkey = pyperclip.paste()
-        printedkey = result.stdout.replace("\n", "")
+    runner = CliRunner()
+    result = runner.invoke(cli, ["-s", "-e", "&"])
 
-        assert len(passkey) == DEFAULT_LENGTH
-        assert passkey == printedkey
+    assert result.exit_code == 0
+    pyperclip.copy.assert_called_once()
+
+    passkey = result.stdout.rstrip()
+
+    assert len(passkey) == DEFAULT_LENGTH
+    assert "'" not in passkey
+    assert '"' not in passkey
+    assert "&" not in passkey
+
+
+def test_makey_length(mocker):
+    mocker.patch("pyperclip.copy")
+
+    runner = CliRunner()
+    result = runner.invoke(cli, ["--show", "-l", 20])
+
+    assert result.exit_code == 0
+    pyperclip.copy.assert_called_once()
+
+    passkey = result.stdout.rstrip()
+
+    assert len(passkey) == 20
+    assert "'" not in passkey
+    assert '"' not in passkey
 
 
 def test_version():
