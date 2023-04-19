@@ -41,7 +41,6 @@ brew: install
     poet -f makey-cli >> formula.rb
 
 # remove artifacts
-# TODO: remove __pycache__ dirs from src/ and tests/
 cleanup:
     rm -f .coverage
     rm -f coverage.xml
