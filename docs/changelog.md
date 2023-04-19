@@ -9,7 +9,7 @@ and this project adheres to
 
 ## [Unreleased]
 
-## [1.3.0] - TBD
+## [1.3.0] - 2023-04-19
 
 ### Added
 
