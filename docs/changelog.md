@@ -9,6 +9,12 @@ and this project adheres to
 
 ## [Unreleased]
 
+### Changed
+
+- `makey`: `-h/--help`
+  - Show default value for `--exclude` option.
+  - Consistent formatting.
+
 ## [1.3.0] - 2023-04-19
 
 ### Added

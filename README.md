@@ -42,7 +42,7 @@ pip install makey-cli
 makey
 ```
 
-New passkey is copied to your clipboard!
+New passkey copied to your clipboard!
 
 > For more usage details, read the **makey-cli** [usage guide](https://boldandbrad.github.io/makey-cli/#/usage).
 
