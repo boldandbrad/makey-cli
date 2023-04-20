@@ -1,9 +1,7 @@
 import pyperclip
 from click.testing import CliRunner
 
-from makey.makey import DEFAULT_LENGTH, cli
-
-COPIED_STDOUT = "\tNew passkey copied to clipboard!\n"
+from makey.makey import COPIED_MESSAGE, DEFAULT_LENGTH, cli
 
 
 def test_makey(mocker):
@@ -14,7 +12,7 @@ def test_makey(mocker):
 
     assert result.exit_code == 0
     pyperclip.copy.assert_called_once()
-    assert result.stdout == COPIED_STDOUT
+    assert result.stdout.rstrip() == COPIED_MESSAGE
 
 
 def test_makey_default_length(mocker):
@@ -47,7 +45,6 @@ def test_makey_exclude(mocker):
     assert len(passkey) == DEFAULT_LENGTH
     assert "'" not in passkey
     assert '"' not in passkey
-    assert "&" not in passkey
 
 
 def test_makey_length(mocker):

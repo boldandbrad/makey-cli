@@ -5,6 +5,7 @@ import click
 import pyperclip
 
 ALWAYS_EXCLUDE = "\"'"
+COPIED_MESSAGE = "\tNew passkey copied to clipboard!"
 DEFAULT_LENGTH = 16
 
 
@@ -14,21 +15,21 @@ DEFAULT_LENGTH = 16
     "--exclude",
     default="",
     is_flag=False,
-    help="Characters to exclude.",
+    help="Characters to exclude. (default \"')",
 )
 @click.option(
     "-l",
     "--length",
     default=DEFAULT_LENGTH,
     is_flag=False,
-    help="Desired passkey length (default 16).",
+    help="Desired passkey length. (default 16)",
 )
 @click.option(
     "-s",
     "--show",
     default=False,
     is_flag=True,
-    help="Print passkey to stdout - not recommended (default False).",
+    help="Print passkey to stdout. Not recommended. (default False)",
 )
 @click.help_option("-h", "--help")
 @click.version_option(
@@ -53,7 +54,8 @@ def cli(exclude: str, length: int, show: bool):
     # copy passkey to clipboard
     pyperclip.copy(passkey)
 
+    # print passkey to stdout if --show given, otherwise print copy success message
     if show:
         print(passkey)
     else:
-        print("\tNew passkey copied to clipboard!")
+        print(COPIED_MESSAGE)
