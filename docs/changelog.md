@@ -9,11 +9,13 @@ and this project adheres to
 
 ## [Unreleased]
 
+## [1.3.1] - 2023-04-20
+
 ### Changed
 
 - `makey`: `-h/--help`
-  - Show default value for `--exclude` option.
-  - Consistent formatting.
+  - Output default value for `--exclude` option.
+  - Consistent output formatting.
 
 ## [1.3.0] - 2023-04-19
 
